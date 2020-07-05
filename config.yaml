@@ -1,0 +1,29 @@
+server:
+  port: 3000
+  mode: 'release'
+
+mysql:
+  user: root
+  password: '123456'
+  path: '127.0.0.1:3306'
+  database: 'test'
+  config: 'charset=utf8&parseTime=True&loc=Local'
+  driver: 'mysql'
+  maxIdleConns: 10
+  maxOpenConns: 100
+  log: true
+
+log:
+  debug: true
+  maxAge: 7
+  fileName: 'server.log'
+  dirName: '/data/go-stock/logs'
+
+url:
+  # 路由前缀
+  prefix: '/api/v1/go-stock'
+
+
+
+
+

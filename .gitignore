@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+/logs
+/out
+/api
+config_prd.yaml
