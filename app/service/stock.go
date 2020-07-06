@@ -20,8 +20,7 @@ func GetStocks(currentPage, pageSize int, stock model.Stock) (list []model.Stock
 	if stock.Name != "" {
 		db = db.Where("name like ?", "%"+stock.Name+"%")
 	}
-
-	if err = db.Where("trigger_date IS NOT NULL").Offset(currentPage - 1).Limit(pageSize).Find(&list).Offset(-1).Limit(-1).Count(&count).Error; err != nil {
+	if err = db.Where("trigger_date IS NOT NULL").Offset((currentPage - 1) * pageSize).Limit(pageSize).Find(&list).Offset(-1).Limit(-1).Count(&count).Error; err != nil {
 		logger.Error("service.GetStocks DB Find error:", err)
 		return
 	}

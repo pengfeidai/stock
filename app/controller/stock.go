@@ -57,7 +57,7 @@ func UpdateStock(c *gin.Context) {
 		return
 	}
 
-	if err := service.UpdateStock(p.Code, p.Performance, p.Type); err != nil {
+	if err := service.UpdateStock(p.Code, p.Performance, p.StockType); err != nil {
 		ctx.Response(common.ERROR, common.UPDATE_STOCK_FAIL, nil)
 		return
 	}

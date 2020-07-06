@@ -10,5 +10,5 @@ type GetStocks struct {
 type UpdateStock struct {
 	Code        string `form:"code" json:"code" binding:"required"`
 	Performance string `form:"performance" json:"performance`
-	Type        string `form:"type" json:"type"`
+	StockType   string `form:"stockType" json:"stockType"`
 }
